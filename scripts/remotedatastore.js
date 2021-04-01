@@ -28,9 +28,9 @@
                                 'fields': {
                                     'coffee': {'stringValue': val['coffee']},
                                     'emailAddress': {'stringValue': val['emailAddress']},
-                                    'flavor': {'stringValue': val['flavor']},
-                                    'size': {'stringValue': val['size']},
-                                    'strength': {'stringValue': val['strength']}
+                                    'flavor': {'stringValue': val['flavor'] || ''},
+                                    'size': {'stringValue': val['size'] || ''},
+                                    'strength': {'stringValue': val['strength'] || ''}
                                 }
                             }
                         }
