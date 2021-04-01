@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CoffeeRun - Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+  </head>
+  <body class="container">
+    <header>
+      <h1>CoffeeRun - Payment</h1>
+    </header>
+    <section>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form data-coffee-order="form">
+            <p> Required fields are followed by<strong><abbr title="required">*</abbr></strong>.</p>
+            <!-- TITLES-->
+            <section>
+              <h2>Contact information</h2>
+              <fieldset>
+                <div class="form-group">
+                  <label for="title_1">Title:</label>
+                  <ul>
+                      <li>
+                          <label for="title_1">
+                            <input type="radio" id="title_1" name="title" value="K" />
+                            King
+                          </label>
+                      </li>
+                      <li>
+                          <label for="title_2">
+                            <input type="radio" id="title_2" name="title" value="Q" />
+                            Queen
+                          </label>
+                      </li> 
+                      <li>
+                        <label for="title_3">
+                          <input type="radio" id="title_3" name="title" value="J" />
+                          Joker
+                        </label>
+                      </li> 
+                  </ul>
+                </div>
+              </fieldset>
+            <!--END TITLES-->
+
+            <!--CUSTOMER INFO-->
+              <div class="form-group">
+                <p>
+                  <label for="name">
+                    <span>Name:</span>
+                    <strong><abbr title="required">*</abbr></strong>
+                  </label>
+                  <div>
+                    <input class="form-control" name="name" id="username"/>
+                  </div>
+              </p>
+              </div>
+
+              <div class="form-group">
+                <p>
+                  <label for="email">
+                    <span>Email:</span>
+                    <strong><abbr title="required">*</abbr></strong>
+                  </label>
+                  <div>
+                    <input class="form-control" type="email" id="mail" name="usermail" placeholder="me@mail.com"/>
+                  </div>
+                </p>
+              </div>
+              
+              <div class="form-group">
+                <p>
+                  <label for="pass">
+                    Password:
+                    <strong> <abbr title="required">*</abbr></strong>
+                  </label>
+                  <div>
+                    <input class="form-control" type="password" id="pwd" name="password"/>
+                  </div>
+                </p>
+              </div>
+            </section>
+
+            <!--PAYMENT INFO-->
+            <section>
+              <h2>Payment information</h2>
+              <div class="form-group">
+                <p>
+                  <label for="card">
+                    <span>Card type:</span>
+                  </label>
+                  <div>
+                    <select  class="form-control" id="card" name="usercard">
+                      <option value="visa">Visa</option>
+                      <option value="mc">Mastercard</option>
+                      <option value="amex">American Express</option>
+                    </select>
+                  </p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <p>
+                  <label for="cardnumber">
+                    Card number:
+                    <strong><abbr title="required">*</abbr></strong>
+                  </label>
+                  <div>
+                    <input class="form-control" type="tel" name="cardnumber" id="number"/>
+                  </div>
+                </p>
+              </div>
+
+              <div class="form-group">
+                  <p>
+                    <label for="date">
+                      <span>Expiration date:</span>
+                      <strong><abbr title="required">*</abbr></strong>
+                      <em>formatted as mm/yy</em>
+                    </label>
+                    <div>
+                      <input class="form-control" type="date" id="date" name="expiration"/>
+                    </div>
+                </p>
+              </div>
+            </section>
+
+            <!--SUBMIT-->
+             
+                <button id="myBtn" class="btn btn-default">
+                  Validate the payment
+                </button>
+              <div id="myModal" class = "modal">
+                <span class="close">&times;</span>
+                <p> "Thank you for your payment" <script> document.write(username)</script> </p> 
+             
+            
+            
+          <script>
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementById("myBtn");
+           
+            var span = document.getElementsByClassName("close")[0];
+
+            btn.onclick = function(){
+              modal.style.display="block";
+              
+            }
+
+            span.onclick = function(){
+              modal.style.display="none";
+            }
+
+            window.onclick=function(event){
+              if (event.target == modal){
+                modal.style.display = "none";
+              }
+            }
+
+            
+          </script>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+      
+     
+
+    <div class = "panel-body">
+      <input type="button" onclick="location.href='http://127.0.0.1:3001/index.html';" value="Go to Order Menu" />
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/payment.js" charset="utf-8"></script>
+  </body>
+</html>
